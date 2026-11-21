@@ -1,3 +1,8 @@
+# Río Magangué – entradas específicas del proyecto
+node_modules
+dist
+coverage
+
 # Logs
 logs
 *.log

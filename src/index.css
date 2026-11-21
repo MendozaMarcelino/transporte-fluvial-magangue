@@ -1,0 +1,121 @@
+/* =============================================
+   Río Magangué – CSS global (mobile-first)
+   ============================================= */
+
+/* Variables de color */
+:root {
+  --azul-rio: #0B4F6C;
+  --verde: #2E8B57;
+  --ambar: #F2A900;
+  --rojo: #C0392B;
+  --blanco: #FFFFFF;
+  --gris-claro: #F4F4F4;
+  --gris-texto: #333333;
+}
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--gris-texto);
+  background-color: var(--gris-claro);
+}
+
+/* Contenedor principal: centrado, ancho máx 480px */
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pantalla {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--blanco);
+}
+
+/* Encabezado de pantalla */
+.pantalla__titulo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--azul-rio);
+  text-align: center;
+}
+
+.pantalla__subtitulo {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Código de embarcación grande */
+.codigo-embarcacion {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--azul-rio);
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+/* Botones – mínimo 48px de alto */
+.btn {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn--primario {
+  background-color: var(--azul-rio);
+  color: var(--blanco);
+}
+
+.btn--primario:active {
+  background-color: #083d56;
+}
+
+.btn--verde {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.btn--ambar {
+  background-color: var(--ambar);
+  color: var(--gris-texto);
+}
+
+.btn--rojo {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+.btn--secundario {
+  background-color: transparent;
+  color: var(--azul-rio);
+  border: 2px solid var(--azul-rio);
+}
+
+/* Emoji de bienvenida */
+.bienvenida__emoji {
+  font-size: 5rem;
+  text-align: center;
+}
