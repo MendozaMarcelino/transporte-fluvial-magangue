@@ -15,3 +15,11 @@ describe('validarCodigoEmbarcacion()', () => {
   it('rechaza "#A20" (letra)',      () => expect(validarCodigoEmbarcacion('#A20')).toBe(false))
   it('rechaza "" (vacío)',          () => expect(validarCodigoEmbarcacion('')).toBe(false))
 })
+
+import { tipoPorCodigo } from '../domain/codigoEmbarcacion'
+
+describe('tipoPorCodigo()', () => {
+  it('#098 → FLOTA',    () => expect(tipoPorCodigo('#098')).toBe('FLOTA'))
+  it('#220 → CHALUPA',  () => expect(tipoPorCodigo('#220')).toBe('CHALUPA'))
+  it('#720 → CARGUERA', () => expect(tipoPorCodigo('#720')).toBe('CARGUERA'))
+})
