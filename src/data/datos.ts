@@ -3,6 +3,7 @@ import type { Embarcacion, Usuario } from '../domain/tipos'
 // =============================================
 // Datos de ejemplo – Río Magangué
 // Origen siempre: Magangué
+// Claves en SHA-256
 // =============================================
 
 export const EMBARCACIONES_INICIALES: Embarcacion[] = [
@@ -78,26 +79,31 @@ export const EMBARCACIONES_INICIALES: Embarcacion[] = [
   },
 ]
 
+// Claves en SHA-256:
+//   pasajero123  → c463ff27...
+//   operador123  → 1725165c...
+//   taquilla123  → d1807f0a...
+//   admin123     → 240be518...
 export const USUARIOS: Usuario[] = [
   {
     username: 'pasajero',
-    passwordHash: 'pasajero123',
+    passwordHash: 'c463ff27738fa30cd49b8546661c9c652f8c14272a35eb8869698198be53ed96',
     rol: 'pasajero',
   },
   {
     username: 'operador220',
-    passwordHash: 'operador123',
+    passwordHash: '1725165c9a0b3698a3d01016e0d8205155820b8d7f21835ca64c0f81c728d880',
     rol: 'operador',
     codigoEmbarcacion: '#220',
   },
   {
     username: 'taquilla',
-    passwordHash: 'taquilla123',
+    passwordHash: 'd1807f0a75ae7594654ab5493e2c9982838611b930b142bd1317859035c64f10',
     rol: 'taquilla',
   },
   {
     username: 'admin',
-    passwordHash: 'admin123',
+    passwordHash: '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9',
     rol: 'admin',
   },
 ]
