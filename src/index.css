@@ -120,44 +120,50 @@ html, body {
   text-align: center;
 }
 
-/* Inputs */
-.input {
-  width: 100%;
-  min-height: 48px;
-  padding: 12px 14px;
-  font-size: 1rem;
-  border: 2px solid #ccc;
+/* ── Lista de embarcaciones ── */
+.emb-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emb-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  outline: none;
+  background: var(--gris-claro);
 }
 
-.input:focus {
-  border-color: var(--azul-rio);
-}
-
-/* Mensaje de error login */
-.login__error {
-  color: var(--rojo);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-/* Bloque de ayuda con usuarios de prueba */
-.login__ayuda {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  color: #555;
-}
-
-.login__ayuda summary {
-  cursor: pointer;
+.emb-codigo {
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--azul-rio);
+  letter-spacing: 2px;
+  min-width: 60px;
+}
+
+.emb-nombre {
+  flex: 1;
   font-weight: 600;
 }
 
-.login__ayuda ul {
-  margin-top: 8px;
-  padding-left: 16px;
-  line-height: 1.8;
+.emb-tipo {
+  font-size: 0.8rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.emb-badge {
+  font-size: 0.75rem;
+  background: var(--ambar);
+  color: var(--gris-texto);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
 }

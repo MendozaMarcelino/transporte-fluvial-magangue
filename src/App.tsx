@@ -7,8 +7,9 @@ import Rutas from './screens/Rutas'
 import Operador from './screens/Operador'
 import Venta from './screens/Venta'
 import Panel from './screens/Panel'
+import Embarcaciones from './screens/Embarcaciones'
 
-type Pantalla = 'bienvenida' | 'login' | PantallaInicio
+type Pantalla = 'bienvenida' | 'login' | PantallaInicio | 'embarcaciones'
 
 export default function App() {
   const [pantalla, setPantalla] = useState<Pantalla>('bienvenida')
@@ -32,7 +33,6 @@ export default function App() {
     return <Login onLogin={handleLogin} />
   }
 
-  // Pantallas protegidas por rol
   if (pantalla === 'rutas' && usuario?.rol === 'pasajero') {
     return <Rutas onCerrarSesion={handleCerrarSesion} />
   }
@@ -46,7 +46,16 @@ export default function App() {
   }
 
   if (pantalla === 'panel' && usuario?.rol === 'admin') {
-    return <Panel onCerrarSesion={handleCerrarSesion} />
+    return (
+      <Panel
+        onEmbarcaciones={() => setPantalla('embarcaciones')}
+        onCerrarSesion={handleCerrarSesion}
+      />
+    )
+  }
+
+  if (pantalla === 'embarcaciones' && usuario?.rol === 'admin') {
+    return <Embarcaciones onVolver={() => setPantalla('panel')} />
   }
 
   // Acceso no autorizado → vuelve al inicio

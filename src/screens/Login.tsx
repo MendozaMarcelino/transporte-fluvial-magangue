@@ -28,7 +28,6 @@ export default function Login({ onLogin }: Props) {
     <div className="pantalla">
       <p className="bienvenida__emoji">🚢</p>
       <h1 className="pantalla__titulo">Río Magangué</h1>
-
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <input
           className="input"
@@ -46,18 +45,15 @@ export default function Login({ onLogin }: Props) {
           autoComplete="current-password"
           onChange={(e) => { setClave(e.target.value); setError(false) }}
         />
-
         {error && (
           <p className="login__error" role="alert">
             Usuario o contraseña incorrectos
           </p>
         )}
-
         <button type="submit" className="btn btn--primario">
           Ingresar
         </button>
       </form>
-
       <details className="login__ayuda">
         <summary>Usuarios de prueba</summary>
         <ul>
