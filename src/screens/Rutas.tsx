@@ -4,6 +4,7 @@ import { filtrarRutas, textoHorario } from '../domain/rutas'
 import type { FiltroTipo } from '../domain/rutas'
 import type { Embarcacion, TipoEmbarcacion } from '../domain/tipos'
 import { IconBarco, IconPin, IconReloj, IconFlecha, IconVolver, IconSalir, IconBuscar, IconUsuario } from '../components/Iconos'
+import EstadoFlota from '../components/EstadoFlota'
 
 interface Props {
   onCerrarSesion: () => void
@@ -103,7 +104,8 @@ export default function Rutas({ onCerrarSesion }: Props) {
                 </div>
               )}
             </div>
-
+            
+            <EstadoFlota tipo={e.tipo} />
             {e.capacidad !== null && (
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', fontWeight: 600, color: '#666', marginBottom: '4px' }}>
